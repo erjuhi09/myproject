@@ -1,0 +1,61 @@
+{% extends 'myapp/header.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+{% if error %}
+<center><b>{{error}}</b></center>
+{% endif %}   
+        <form name="signup" method="post" action="{% url 'signup_user' %}" enctype="multipart/form-data">
+            {%csrf_token %}	 
+       	<table align="center" cellspacing="6">
+       	  
+       	  <tr>
+       	  	<td>first name</td>
+       	  	<td><input type="text" name="fname" required="required"></td>
+       	  </tr>	
+
+       	  <tr>
+       	  	<td>last name</td>
+       	  	<td><input type="text" name="lname" required="required"></td>
+       	  </tr>	
+       	  <tr>
+       	  	<td>email</td>
+       	  	<td><input type="text" name="email" required="required"></td>
+       	  </tr>	 
+       	  <tr>
+       	  	<td>mobile</td>
+       	  	<td><input type="text" name="mobile" required="required"></td>
+       	  </tr>	
+       	  <tr>
+       	  	<td>address</td>
+       	  	<td><textarea  name="address" rows="5" cols="21" required="required"></textarea></td>
+       	  </tr>	
+       	  <tr>
+       	  	<td>password</td>
+       	  	<td><input type="password" name="password" required="required"></td>
+       	  </tr>
+       	  <tr>
+       	  	<td>confirm password</td>
+       	  	<td><input type="password" name="cpassword" required="required"></td>
+       	  </tr>	
+       	  <tr>
+       	  	<td>photo</td>
+       	  	<td><input type="file" name="image"></td>
+       	  </tr>
+       	  <tr>
+       	  	<td colspan="2" align="center">
+       	  		<input type="submit" value="signup">
+       	  	</td>
+       	  		
+       	  </tr>		
+       </form>
+
+
+</table>
+ {% endblock %} 
+</body>
+</html>
